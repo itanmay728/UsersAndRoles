@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+<section>
+
+<div class="container mt-5">
+
+<h1>Login</h1>
+
+<!-- Pills content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+    <form th:action="@{/}" method="post">
+
+				<div th:if="${param.error}" class=" text-danger text-center">Invalid username or password</div>
+
+				<div th:if="${param.logout}" class=" text-success text-center">Logout Successful</div>
+      <!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email" id="loginName" class="form-control" name="email" placeholder="Email"/>
+        
+      </div>
+
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="loginPassword" class="form-control" name="password" placeholder="password"/>
+        
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+
+    
+    </form>
+  </div>
+  </div>
+ </div>
+  
+</section>
+
+</body>
+</html>

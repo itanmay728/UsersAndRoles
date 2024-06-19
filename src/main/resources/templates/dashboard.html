@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+<a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+
+<div class="container mt-5">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">User name</th>
+      <th scope="col">Roles</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="User : ${Users}">
+      <th scope="row" th:text="${User.id}">1</th>
+      <td th:text="${User.name}">Mark</td>
+      <td th:text="${User.userName}">Otto</td>
+      <td th:text="${User.roles}">@mdo</td>
+      <td>
+      
+      <a th:href="@{/admin/user/edit/{id} (id=${User.id})}">Edit</a>
+      
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<section>
+
+
+<div class="container mt-5">
+
+<h1>register</h1>
+
+<!-- Pills content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+    <form th:action="@{/saveUser}" method="post">
+
+  		<!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" id="loginName" class="form-control" placeholder="name" name="name"/>
+        
+      </div> 
+      
+      <!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email" id="loginName" class="form-control" placeholder="Email" name="userName"/>
+        
+      </div>
+
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="loginPassword" class="form-control" placeholder="password" name="password"/>
+        
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Add</button>
+
+    
+    </form>
+  </div>
+  </div>
+ </div>
+ 
+ 
+</section>
+
+</body>
+</html>

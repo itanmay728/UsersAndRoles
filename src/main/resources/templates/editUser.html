@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+
+<a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+
+<a th:href="@{/dashboard}" class="btn btn-danger">Back</a>
+
+<div class="container mt-5">
+
+<h1>register</h1>
+
+<!-- Pills content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+    <form th:action="@{/saveEditedUser}" method="post" th:object="${user}">
+
+<input type="hidden"  th:field="*{id}" />
+  		<!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" id="loginName" class="form-control" placeholder="name"  th:field="*{name}" />
+        
+      </div> 
+      
+      <!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email" id="loginName" class="form-control" placeholder="Email"  th:field="*{userName}" />
+        
+      </div>
+
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="loginPassword" class="form-control" placeholder="password"  th:field="*{password}" required="required"/>
+        
+      </div>
+      
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <label>Assigned Roles:-</label>
+        
+        <th:block th:each="r : ${listRoles}">
+        
+        <input type="checkbox" id="loginPassword" class="m-2" th:field = "*{roles}" th:text="${r.role}" th:value="${r.id}"/>
+        
+        </th:block>
+        
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Update</button>
+
+    
+    </form>
+  </div>
+  </div>
+ </div>
+
+</body>
+</html>
